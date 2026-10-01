@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="MD Sameer Hashmi builds record-keeping software for manufacturers and exporters: purchase tracking, employee documents and compliance renewals.">
+<meta property="og:title" content="MD Sameer Hashmi | Business Software Developer">
+<meta property="og:description" content="Record-keeping software for manufacturers and exporters, installed on your own server.">
+<meta property="og:image" content="sameer.jpg">
+<meta property="og:type" content="website">
+<style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<title>MD Sameer Hashmi | Business Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: executive dark profile. Name-first hero beside a full portrait in a fine gold frame,
+   then credentials, journey, selected work, measurable change, engagement, FAQ, contact.
+   Deliberately single dark theme. */
+:root{
+  --bg:#0B0C0F;
+  --bg-2:#111317;
+  --panel:#15171C;
+  --line:#25282F;
+  --line-2:#33373F;
+  --fg:#ECEDEF;
+  --muted:#9A9FA9;
+  --dim:#6B707A;
+  --gold:#C8A96A;
+  --gold-soft:#C8A96A1F;
+  --steel:#8FA4C8;
+  --ok:#7CC6A0; --ok-bg:#152A21;
+  --warn:#D9B25E; --warn-bg:#2B2413;
+  --bad:#E08C84; --bad-bg:#2D1817;
+  --info:#8FA4C8; --info-bg:#18202E;
+  --f-sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:1rem;line-height:1.65;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+p{margin:0}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.label{font:500 .72rem var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.rule{height:1px;background:var(--line)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 .95rem var(--f-sans);padding:12px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--line-2);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:#16120A}
+.btn-gold:hover{background:#D6B97C}
+.btn-line{background:transparent;color:var(--fg)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:#0B0C0FE6;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-weight:600;letter-spacing:-.01em}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--gold);border-radius:6px;color:var(--gold);font:500 .78rem var(--f-mono);font-style:normal;letter-spacing:.04em}
+.links{display:flex;gap:30px}
+.links a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.links a:hover{color:var(--fg)}
+.top .btn{padding:9px 18px;font-size:.88rem}
+@media (max-width:800px){.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding-block:72px 88px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 420px at 80% 20%,#C8A96A14,transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);font-weight:600;margin-top:20px}
+.hero h1 span{color:var(--muted);font-weight:300}
+.role{margin-top:20px;font-size:clamp(1.15rem,2vw,1.4rem);color:var(--fg);font-weight:400;max-width:34ch;line-height:1.45}
+.summary{margin-top:18px;color:var(--muted);max-width:56ch}
+.ctas{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.stats{margin-top:48px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--line)}
+.stats div{padding:20px 36px 0 0;margin-right:36px;border-right:1px solid var(--line);min-width:0}
+.stats div:last-child{border-right:0;margin-right:0}
+.stats b{display:block;font:500 2rem var(--f-mono);letter-spacing:-.02em}
+.stats span{font-size:.85rem;color:var(--muted)}
+.portrait{display:grid;gap:14px;min-width:0;justify-items:center}
+.frame{position:relative;width:100%;max-width:420px;padding:10px;border:1px solid var(--line-2);border-radius:6px}
+.frame::before,.frame::after{content:"";position:absolute;width:28px;height:28px;border-color:var(--gold);border-style:solid}
+.frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.frame img{display:block;width:100%;height:auto;border-radius:2px;background:#fff}
+.caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%;max-width:420px;font-size:.85rem;color:var(--muted)}
+.caption .live{display:inline-flex;align-items:center;gap:8px;color:var(--fg)}
+.caption .live i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr;gap:48px}.frame{max-width:360px}}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.stats div{padding-right:16px;margin-right:16px}.stats div:nth-child(2){border-right:0;margin-right:0}.stats div:nth-child(3){grid-column:1/-1;border-top:1px solid var(--line);margin-top:18px}}
+
+/* expertise strip */
+.strip{border-block:1px solid var(--line);background:var(--bg-2)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.cap{padding:26px 24px;border-left:1px solid var(--line);min-width:0}
+.cap:first-child{border-left:0;padding-left:0}
+.cap .label{color:var(--dim)}
+.cap b{display:block;margin-top:8px;font-weight:500;font-size:1.02rem}
+@media (max-width:860px){.strip .wrap{grid-template-columns:1fr 1fr}.cap{border-left:0;padding-left:0;border-top:1px solid var(--line)}.cap:nth-child(-n+2){border-top:0}}
+
+/* sections */
+section{padding-block:104px}
+.head{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:end;margin-bottom:56px}
+.head h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+.head p{color:var(--muted);font-size:1.05rem;max-width:56ch}
+.head .t{display:grid;gap:16px}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:16px}}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.j{padding:30px 26px;border-left:1px solid var(--line);background:var(--bg-2);display:grid;gap:10px;align-content:start;min-width:0}
+.j:first-child{border-left:0}
+.j .n{font:500 .78rem var(--f-mono);color:var(--dim)}
+.j h3{font-size:1.2rem;font-weight:500;letter-spacing:-.015em}
+.j p{color:var(--muted);font-size:.93rem}
+.j.now{background:linear-gradient(180deg,#1A1812,var(--bg-2))}
+.j.now .n{color:var(--gold)}
+@media (max-width:920px){.journey{grid-template-columns:1fr 1fr}.j{border-left:0;border-top:1px solid var(--line)}.j:nth-child(-n+2){border-top:0}.j:nth-child(even){border-left:1px solid var(--line)}}
+@media (max-width:560px){.journey{grid-template-columns:1fr}.j:nth-child(even){border-left:0}.j:nth-child(2){border-top:1px solid var(--line)}}
+
+/* work */
+.work{display:grid;gap:24px}
+.proj{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:44px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.proj:nth-child(even) .ptext{order:2}
+.ptext{display:grid;gap:14px;min-width:0}
+.ptext .idx{display:flex;align-items:center;gap:14px}
+.ptext .idx .mono{color:var(--dim);font-size:.8rem}
+.ptext h3{font-size:clamp(1.8rem,3.2vw,2.5rem)}
+.ptext > p{color:var(--muted)}
+.specs{margin-top:8px;display:grid;border-top:1px solid var(--line)}
+.specs div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.specs dt{font:500 .7rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding-top:4px}
+.specs dd{margin:0}
+@media (max-width:900px){.proj{grid-template-columns:1fr;gap:28px;padding:26px}.proj:nth-child(even) .ptext{order:0}.specs div{grid-template-columns:1fr;gap:2px}}
+
+/* screen */
+.screen{border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--bg);min-width:0;box-shadow:0 40px 80px -40px #000}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.bar b{font-weight:500;font-size:.88rem}
+.bar small{font:400 .68rem var(--f-mono);color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.sb{padding:16px;display:grid;gap:9px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{padding:12px;border:1px solid var(--line);border-radius:8px;min-width:0}
+.kpi small{display:block;font:500 .64rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.kpi b{font:500 1.5rem var(--f-mono)}
+.kpi.hot{border-color:#C8A96A66;background:var(--gold-soft)}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.86rem}
+.row .mono{font-size:.75rem;color:var(--muted)}
+.row .t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip{display:inline-block;font:500 .64rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.chip.ok{background:var(--ok-bg);color:var(--ok)}.chip.warn{background:var(--warn-bg);color:var(--warn)}.chip.bad{background:var(--bad-bg);color:var(--bad)}.chip.info{background:var(--info-bg);color:var(--info)}
+.meter{display:grid;gap:6px;margin-top:4px}
+.meter .lbl{display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted)}
+.track{height:4px;border-radius:4px;background:var(--line);overflow:hidden}
+.fill{height:100%;background:var(--gold)}
+
+/* impact table */
+.impact{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.ir{display:grid;grid-template-columns:.7fr 1fr 1fr;border-top:1px solid var(--line)}
+.ir:first-child{border-top:0}
+.ir > div{padding:20px 24px;min-width:0}
+.ih > div{font:500 .7rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);background:var(--bg-2);padding-block:14px}
+.ih .a{color:var(--gold)}
+.ir .topic{font-weight:500}
+.ir .b{color:var(--dim)}
+.ir .a{background:#C8A96A0A}
+@media (max-width:780px){.ir{grid-template-columns:1fr}.ih{display:none}.ir > div{padding:6px 20px}.ir .topic{padding-top:18px}.ir .a{padding-bottom:18px;background:transparent}
+  .ir .b::before{content:"Before  ";font:500 .66rem var(--f-mono);letter-spacing:.12em;color:var(--dim)}
+  .ir .a::before{content:"After  ";font:500 .66rem var(--f-mono);letter-spacing:.12em;color:var(--gold)}}
+
+/* engagement */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.step{padding:26px 22px 0 0;display:grid;gap:8px;align-content:start;min-width:0;position:relative}
+.step::before{content:"";position:absolute;top:-1px;left:0;width:36px;height:2px;background:var(--gold)}
+.step .n{font:500 .74rem var(--f-mono);color:var(--dim)}
+.step h3{font-size:1.1rem;font-weight:500;letter-spacing:-.01em}
+.step p{font-size:.92rem;color:var(--muted)}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr;gap:28px 24px}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.model{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.m{padding:28px;border:1px solid var(--line);border-radius:10px;background:var(--panel);display:grid;gap:10px;align-content:start;min-width:0}
+.m .label{color:var(--dim)}
+.m h3{font-size:1.35rem;font-weight:500}
+.m p{color:var(--muted);font-size:.94rem}
+.m.key{border-color:#C8A96A66}
+.m.key .label{color:var(--gold)}
+@media (max-width:860px){.model{grid-template-columns:1fr}}
+
+/* faq */
+.qs{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:1.1rem;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;position:relative;width:14px;height:14px}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:0;top:6px;width:14px;height:1.5px;background:var(--gold);transition:transform .25s}
+summary .pm::after{transform:rotate(90deg)}
+details[open] summary .pm::after{transform:rotate(0)}
+details p{padding:0 0 24px;color:var(--muted);max-width:68ch}
+
+/* contact */
+.contact{border:1px solid var(--line-2);border-radius:14px;padding:clamp(28px,6vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;
+  background:radial-gradient(600px 300px at 100% 0%,#C8A96A1A,transparent 70%),var(--panel)}
+.contact h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.contact p{margin-top:16px;color:var(--muted);max-width:46ch}
+.cnum{display:grid;gap:14px;padding:26px;border:1px solid var(--line);border-radius:10px;background:var(--bg);min-width:0}
+.cnum .num{font:500 1.5rem var(--f-mono);user-select:all;word-break:break-word}
+.cnum .acts{display:flex;gap:10px;flex-wrap:wrap}
+.cnum small{color:var(--dim);font-size:.84rem}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+footer{padding-block:36px;color:var(--dim);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><i>SH</i>MD Sameer Hashmi</a>
+    <nav class="links" aria-label="Main">
+      <a href="#profile">Profile</a>
+      <a href="#work">Work</a>
+      <a href="#engagement">Engagement</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-gold" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">Business Software Developer</p>
+        <h1>MD Sameer <span>Hashmi</span></h1>
+        <p class="role">I design and build record-keeping software for manufacturers and exporters.</p>
+        <p class="summary">Purchase tracking, employee documentation and compliance renewals, built around how your teams already work and installed on your own server, so your data never leaves your premises.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="https://wa.me/917667825452" target="_blank" rel="noopener">Discuss a project</a>
+          <a class="btn btn-line" href="#work">View selected work</a>
+        </div>
+        <div class="stats">
+          <div><b>3</b><span>Systems in production</span></div>
+          <div><b>~550</b><span>Employee records managed</span></div>
+          <div><b>~50</b><span>Compliance items tracked</span></div>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="frame"><img src="sameer.jpg" alt="MD Sameer Hashmi" width="900" height="1198"></div>
+        <div class="caption">
+          <span class="live"><i aria-hidden="true"></i>Available for new projects</span>
+          <span>Remote engagements across India</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="cap"><span class="label">Domain</span><b>Manufacturing and export</b></div>
+      <div class="cap"><span class="label">Focus</span><b>Purchase, HR and compliance records</b></div>
+      <div class="cap"><span class="label">Delivery</span><b>Web app, database and server setup</b></div>
+      <div class="cap"><span class="label">Background</span><b>ERP and procurement</b></div>
+    </div>
+  </div>
+
+  <!-- PROFILE / JOURNEY -->
+  <section id="profile">
+    <div class="wrap">
+      <div class="head">
+        <div class="t"><p class="label">Profile</p><h2>Built from inside the factory office</h2></div>
+        <p>My background is in ERP and procurement operations, not a software agency. I build systems for the processes I have worked in, which is why they fit how factory teams actually work.</p>
+      </div>
+      <div class="journey">
+        <div class="j"><span class="n">01 · Foundation</span><h3>ERP and procurement operations</h3><p>Day-to-day work with purchase orders, proforma invoices, payments and stores at a manufacturer.</p></div>
+        <div class="j"><span class="n">02 · The gap</span><h3>Critical records outside any system</h3><p>Production lived in the ERP and accounts in Tally. Everything between them ran on registers and spreadsheets.</p></div>
+        <div class="j"><span class="n">03 · Delivery</span><h3>Three systems in production</h3><p>Employee documents, compliance renewals and purchase tracking, now in daily use at ASPS International LLP.</p></div>
+        <div class="j now"><span class="n">04 · Today</span><h3>Building for other manufacturers</h3><p>Taking on new engagements with manufacturers and exporters facing the same gaps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="t"><p class="label">Selected work</p><h2>In production at ASPS International LLP</h2></div>
+        <p>Each system was designed with the teams who use it and runs on the company's own server. All screens shown here use sample data.</p>
+      </div>
+      <div class="work">
+        <article class="proj">
+          <div class="ptext">
+            <div class="idx"><span class="label">Purchase records</span><span class="mono">01 / 03</span></div>
+            <h3>PayGate</h3>
+            <p>End-to-end tracking of every purchase, from proforma invoice to material receipt, across the Merchandiser, Accounts and Material desks.</p>
+            <dl class="specs">
+              <div><dt>Automation</dt><dd>Reads PI numbers and amounts from the document. 14 of 14 read correctly in testing.</dd></div>
+              <div><dt>Tracking</dt><dd>Every material lot moves from In transit to Cleared.</dd></div>
+              <div><dt>Controls</dt><dd>Alert when material is pending 30 days after payment. Vendor credits carried to the next PI.</dd></div>
+            </dl>
+          </div>
+          <div class="screen">
+            <div class="bar"><b>PayGate · Management view</b><small>Sample data</small></div>
+            <div class="sb">
+              <div class="kpis">
+                <div class="kpi"><small>Merchandiser</small><b>4</b></div>
+                <div class="kpi hot"><small>Accounts</small><b>7</b></div>
+                <div class="kpi"><small>Material</small><b>5</b></div>
+              </div>
+              <div class="row"><span class="mono">PI-24-118</span><span class="t">Cotton yarn, 40s combed</span><span class="chip ok">Cleared</span></div>
+              <div class="row"><span class="mono">PI-24-121</span><span class="t">Trims and labels</span><span class="chip info">In transit</span></div>
+              <div class="row"><span class="mono">PI-24-109</span><span class="t">Dyed fabric, 2 lots</span><span class="chip bad">32 days</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="ptext">
+            <div class="idx"><span class="label">Employee documentation</span><span class="mono">02 / 03</span></div>
+            <h3>Document Management System</h3>
+            <p>A complete document checklist for every employee, with deadlines counted from the joining date and overdue items flagged automatically.</p>
+            <dl class="specs">
+              <div><dt>Scale</dt><dd>Around 550 employees, with 20 to 30 new joiners on peak days.</dd></div>
+              <div><dt>Automation</dt><dd>Company stamp applied to forms automatically on upload.</dd></div>
+              <div><dt>Reporting</dt><dd>Excel import and export, and a daily overdue report to the office.</dd></div>
+            </dl>
+          </div>
+          <div class="screen">
+            <div class="bar"><b>Employee E-10482</b><small>Sample data</small></div>
+            <div class="sb">
+              <div class="row"><span class="mono">PAN</span><span class="t">Uploaded on day 2</span><span class="chip ok">Complete</span></div>
+              <div class="row"><span class="mono">PF Form</span><span class="t">Stamped on upload</span><span class="chip ok">Complete</span></div>
+              <div class="row"><span class="mono">ESIC</span><span class="t">Due in 4 days</span><span class="chip warn">Pending</span></div>
+              <div class="row"><span class="mono">Bio-data</span><span class="t">6 days past deadline</span><span class="chip bad">Overdue</span></div>
+              <div class="meter"><div class="lbl"><span>Checklist completion</span><span class="mono">7 / 9</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="ptext">
+            <div class="idx"><span class="label">Compliance</span><span class="mono">03 / 03</span></div>
+            <h3>Compliance Tracker</h3>
+            <p>A single register for around 50 committees, trainings, agreements, testing reports and licences, each with a full renewal history.</p>
+            <dl class="specs">
+              <div><dt>Reminders</dt><dd>One consolidated daily email for items due in 30, 20 and 10 days.</dd></div>
+              <div><dt>Escalation</dt><dd>Daily warning for expired items until they are renewed.</dd></div>
+              <div><dt>Audit trail</dt><dd>Previous copies are never overwritten, with issue dates preserved.</dd></div>
+            </dl>
+          </div>
+          <div class="screen">
+            <div class="bar"><b>Renewals · Next 30 days</b><small>Sample data</small></div>
+            <div class="sb">
+              <div class="row"><span class="chip info">Licence</span><span class="t">Factory licence</span><span class="mono">28 days</span></div>
+              <div class="row"><span class="chip info">Testing</span><span class="t">Fire extinguisher refill report</span><span class="mono">19 days</span></div>
+              <div class="row"><span class="chip info">Training</span><span class="t">First-aid training</span><span class="mono">9 days</span></div>
+              <div class="row"><span class="chip bad">Expired</span><span class="t">Consent to operate</span><span class="mono">3 days ago</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="t"><p class="label">Impact</p><h2>What changes for the business</h2></div>
+        <p>The software replaces follow-ups and manual searching with records that are always current and visible to management.</p>
+      </div>
+      <div class="impact" role="table" aria-label="Before and after">
+        <div class="ir ih" role="row"><div role="columnheader">Area</div><div role="columnheader">Before</div><div role="columnheader" class="a">After</div></div>
+        <div class="ir" role="row"><div class="topic" role="cell">Purchase status</div><div class="b" role="cell">Calls across accounts, stores and vendors</div><div class="a" role="cell">Each PI's desk and lot status on one screen</div></div>
+        <div class="ir" role="row"><div class="topic" role="cell">Licence renewals</div><div class="b" role="cell">Dates in files, often noticed after expiry</div><div class="a" role="cell">Reminders at 30, 20 and 10 days</div></div>
+        <div class="ir" role="row"><div class="topic" role="cell">Employee files</div><div class="b" role="cell">Gaps discovered during inspections</div><div class="a" role="cell">Per-employee checklist with daily overdue report</div></div>
+        <div class="ir" role="row"><div class="topic" role="cell">Management visibility</div><div class="b" role="cell">Dependent on staff for updates</div><div class="a" role="cell">View-only access to live records</div></div>
+        <div class="ir" role="row"><div class="topic" role="cell">Audit readiness</div><div class="b" role="cell">Physical search for past copies</div><div class="a" role="cell">Complete history retained with dates</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT -->
+  <section id="engagement" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="t"><p class="label">Engagement</p><h2>A structured, low-risk process</h2></div>
+        <p>Delivery can be fully remote. Installation runs through screen-sharing sessions that your team approves and observes.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">Phase 1</span><h3>Discovery</h3><p>Map how records move through your teams today.</p></div>
+        <div class="step"><span class="n">Phase 2</span><h3>Development</h3><p>Working screens shared early for review and correction.</p></div>
+        <div class="step"><span class="n">Phase 3</span><h3>Deployment</h3><p>Installation on your server, on site or remote.</p></div>
+        <div class="step"><span class="n">Phase 4</span><h3>Training</h3><p>Recorded sessions for each team.</p></div>
+        <div class="step"><span class="n">Phase 5</span><h3>Support</h3><p>Fixes, backups and minor changes each quarter.</p></div>
+      </div>
+      <div class="model">
+        <div class="m"><span class="label">One-time</span><h3>Build</h3><p>Fixed quote per system, agreed before work begins.</p></div>
+        <div class="m"><span class="label">One-time</span><h3>Setup</h3><p>Server installation, data import and team training.</p></div>
+        <div class="m key"><span class="label">Quarterly</span><h3>Maintenance</h3><p>One plan covering all your systems. New features quoted separately.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="t"><p class="label">FAQ</p><h2>Common questions</h2></div>
+        <p>For anything not covered here, send your question on WhatsApp.</p>
+      </div>
+      <div class="qs">
+        <details open><summary>Where is our data stored?<span class="pm" aria-hidden="true"></span></summary><p>On your own server, inside your premises. Nothing is stored on an external cloud unless you request it, and every user receives only the access their role requires.</p></details>
+        <details><summary>Do we need to replace Tally or our ERP?<span class="pm" aria-hidden="true"></span></summary><p>No. These systems cover the processes your existing software does not, such as purchase follow-ups, documentation and renewals. Your current software continues as it is.</p></details>
+        <details><summary>Can installation be done remotely?<span class="pm" aria-hidden="true"></span></summary><p>Yes. Installation and training are carried out through screen-sharing sessions that your team approves and observes.</p></details>
+        <details><summary>How is pricing structured?<span class="pm" aria-hidden="true"></span></summary><p>A fixed build price per system, a one-time setup fee, and a quarterly maintenance plan covering all your systems. Any new feature is quoted and approved before work begins.</p></details>
+        <details><summary>How is support handled after go-live?<span class="pm" aria-hidden="true"></span></summary><p>Bug fixes, backups and minor changes are covered by the maintenance plan, with direct access by phone and WhatsApp.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <p class="label">Contact</p>
+          <h2 style="margin-top:14px">Let's discuss what your teams are tracking by hand.</h2>
+          <p>Share a short description of the process. I will respond with a proposed approach and a demonstration using sample data.</p>
+        </div>
+        <div class="cnum">
+          <span class="label" style="color:var(--dim)">Phone and WhatsApp</span>
+          <span class="num" id="num">+91 76678 25452</span>
+          <div class="acts">
+            <a class="btn btn-gold" href="https://wa.me/917667825452" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button class="btn btn-line" id="copy" type="button">Copy number</button>
+          </div>
+          <small id="copied" aria-live="polite">Monday to Saturday</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 MD Sameer Hashmi</span>
+    <span>All product screens use sample data.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var note=document.getElementById('copied');
+  function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Number selected. Copy it with your keyboard or long-press.';}
+  try{navigator.clipboard.writeText('+917667825452').then(function(){note.textContent='Number copied.';},fallback);}catch(e){fallback();}
+});
+</script>
+
+</body>
+</html>
