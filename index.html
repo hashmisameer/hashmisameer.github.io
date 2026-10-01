@@ -200,6 +200,7 @@ section{padding-block:96px}
 .form input,.form textarea{font:400 .95rem var(--f-sans);color:var(--ink);padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--cream);width:100%}
 .form textarea{min-height:130px;resize:vertical}
 .form .btn{justify-self:start}
+.sendrow{display:flex;gap:10px;flex-wrap:wrap}
 .form small{color:var(--muted);font-size:.8rem}
 @media (max-width:900px){.contact{grid-template-columns:1fr}}
 @media (max-width:480px){.form{grid-template-columns:1fr}.ci{grid-template-columns:1fr;gap:6px}.ci .l{min-width:0;justify-self:start}}
@@ -493,9 +494,13 @@ footer .socs{display:flex;gap:10px;margin-top:18px}
         <label>Company<input id="f-company" name="company" type="text" placeholder="Company name"></label>
         <label class="full">What should the software handle?<input id="f-subject" name="subject" type="text" placeholder="e.g. Purchase tracking"></label>
         <label class="full">Message<textarea id="f-msg" name="message" placeholder="Tell me a little about the problem" required></textarea></label>
-        <button class="btn btn-gold full" type="submit">Send on WhatsApp
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></button>
-        <small class="full" id="fnote" aria-live="polite">Your message opens in WhatsApp, ready to send.</small>
+        <div class="full sendrow">
+          <button class="btn btn-gold" type="submit" data-via="wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.2-4.1a8.5 8.5 0 1 1 15.8-4.4Z"/></svg>Send on WhatsApp</button>
+          <button class="btn btn-ink" type="submit" data-via="mail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Send by Email</button>
+        </div>
+        <small class="full" id="fnote" aria-live="polite">Pick WhatsApp or email. Your message opens ready to send.</small>
       </form>
     </div>
   </section>
@@ -524,16 +529,27 @@ footer .socs{display:flex;gap:10px;margin-top:18px}
 <script>
 (function(){
   var form=document.getElementById('cform'),note=document.getElementById('fnote');
+  var via='wa';
+  form.querySelectorAll('[data-via]').forEach(function(b){b.addEventListener('click',function(){via=b.getAttribute('data-via');});});
+  function go(url){var w=null;try{w=window.open(url,'_blank','noopener');}catch(err){}if(!w){try{window.location.href=url;}catch(err){}}}
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    if(e.submitter&&e.submitter.getAttribute('data-via'))via=e.submitter.getAttribute('data-via');
     var n=document.getElementById('f-name').value.trim(),c=document.getElementById('f-company').value.trim(),
         s=document.getElementById('f-subject').value.trim(),m=document.getElementById('f-msg').value.trim();
     if(!n||!m){note.textContent='Please add your name and a short message.';return;}
     var text='Hello Sameer,\n\nName: '+n+(c?'\nCompany: '+c:'')+(s?'\nNeed: '+s:'')+'\n\n'+m;
-    var url='https://wa.me/917667825452?text='+encodeURIComponent(text);
-    var w=null;try{w=window.open(url,'_blank','noopener');}catch(err){}
-    if(!w){try{window.location.href=url;}catch(err){}}
-    note.innerHTML='If WhatsApp did not open, <a href="'+url+'" target="_blank" rel="noopener">tap here to continue</a>.';
+    if(via==='mail'){
+      var to='hashmisameer99.9@gmail.com',sub='Project enquiry'+(c?' from '+c:'')+(s?': '+s:'');
+      var mailto='mailto:'+to+'?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(text);
+      var gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+encodeURIComponent(sub)+'&body='+encodeURIComponent(text);
+      try{window.location.href=mailto;}catch(err){}
+      note.innerHTML='Your email app should open with the message ready. If it did not, <a href="'+gmail+'" target="_blank" rel="noopener">open it in Gmail</a> or write to '+to+'.';
+    }else{
+      var url='https://wa.me/917667825452?text='+encodeURIComponent(text);
+      go(url);
+      note.innerHTML='If WhatsApp did not open, <a href="'+url+'" target="_blank" rel="noopener">tap here to continue</a>.';
+    }
   });
   var links=[].slice.call(document.querySelectorAll('.menu a'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
