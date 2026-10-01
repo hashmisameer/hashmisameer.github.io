@@ -6,459 +6,554 @@
 <meta name="description" content="MD Sameer Hashmi builds record-keeping software for manufacturers and exporters: purchase tracking, employee documents and compliance renewals.">
 <meta property="og:title" content="MD Sameer Hashmi | Business Software Developer">
 <meta property="og:description" content="Record-keeping software for manufacturers and exporters, installed on your own server.">
-<meta property="og:image" content="sameer.jpg">
+<meta property="og:image" content="https://hashmisameer.github.io/sameer.jpg">
 <meta property="og:type" content="website">
 <style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <title>MD Sameer Hashmi | Business Software Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
 <style>
-/* Layout: executive dark profile. Name-first hero beside a full portrait in a fine gold frame,
-   then credentials, journey, selected work, measurable change, engagement, FAQ, contact.
-   Deliberately single dark theme. */
+/* Layout: follows the client's reference — warm cream page, serif headlines in ink and gold,
+   cut-out portrait in front of a large circle, then about, services, expertise, work, process,
+   contact with form, and a dark footer. Deliberately single light theme, as requested. */
 :root{
-  --bg:#0B0C0F;
-  --bg-2:#111317;
-  --panel:#15171C;
-  --line:#25282F;
-  --line-2:#33373F;
-  --fg:#ECEDEF;
-  --muted:#9A9FA9;
-  --dim:#6B707A;
-  --gold:#C8A96A;
-  --gold-soft:#C8A96A1F;
-  --steel:#8FA4C8;
-  --ok:#7CC6A0; --ok-bg:#152A21;
-  --warn:#D9B25E; --warn-bg:#2B2413;
-  --bad:#E08C84; --bad-bg:#2D1817;
-  --info:#8FA4C8; --info-bg:#18202E;
-  --f-sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"Geist Mono",ui-monospace,Consolas,monospace;
-  color-scheme:dark;
+  --cream:#FBF8F3;
+  --cream-2:#F5EFE5;
+  --white:#FFFFFF;
+  --ink:#16140F;
+  --text:#3D3A33;
+  --muted:#7A746A;
+  --line:#ECE4D7;
+  --gold:#B88A3E;
+  --gold-2:#E9D7B5;
+  --gold-soft:#F6EDDC;
+  --ok:#2F7D55;
+  --f-serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --f-sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:1rem;line-height:1.65;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
-h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em;line-height:1.08;text-wrap:balance}
+body{background:var(--cream);color:var(--text);font-family:var(--f-sans);font-size:1rem;line-height:1.65;margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:22px}
+h1,h2,h3{margin:0;color:var(--ink);text-wrap:balance}
+h1,h2{font-family:var(--f-serif);font-weight:400;letter-spacing:-.01em;line-height:1.08}
+h3{font-family:var(--f-sans);font-weight:700;font-size:1.05rem;line-height:1.3}
 p{margin:0}
 a{color:var(--gold)}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
-.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.label{font:500 .72rem var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-.rule{height:1px;background:var(--line)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.gold{color:var(--gold)}
+.kicker{font:700 .72rem var(--f-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.center{text-align:center}
 
-.btn{display:inline-flex;align-items:center;gap:10px;font:500 .95rem var(--f-sans);padding:12px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--line-2);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.btn-gold{background:var(--gold);border-color:var(--gold);color:#16120A}
-.btn-gold:hover{background:#D6B97C}
-.btn-line{background:transparent;color:var(--fg)}
-.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 .92rem var(--f-sans);padding:12px 22px;border-radius:8px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn svg{flex:none}
+.btn-ink{background:var(--ink);color:var(--white)}
+.btn-ink:hover{transform:translateY(-2px)}
+.btn-gold-line{background:transparent;color:var(--gold);border-color:var(--gold)}
+.btn-gold-line:hover{background:var(--gold);color:var(--white)}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.btn-gold:hover{transform:translateY(-2px)}
 
 /* nav */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:#0B0C0FE6;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#FBF8F3EB;backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
-.logo{display:flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-weight:600;letter-spacing:-.01em}
-.logo i{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--gold);border-radius:6px;color:var(--gold);font:500 .78rem var(--f-mono);font-style:normal;letter-spacing:.04em}
-.links{display:flex;gap:30px}
-.links a{color:var(--muted);text-decoration:none;font-size:.92rem}
-.links a:hover{color:var(--fg)}
-.top .btn{padding:9px 18px;font-size:.88rem}
-@media (max-width:800px){.links{display:none}}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 1rem var(--f-sans);letter-spacing:.14em}
+.logo b{font:400 1.7rem var(--f-serif);letter-spacing:-.02em;color:var(--gold);line-height:1}
+.menu{display:flex;gap:30px}
+.menu a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500;position:relative}
+.menu a:hover{color:var(--gold)}
+.menu a.on{color:var(--gold)}
+.menu a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold)}
+.top .btn{padding:9px 16px;font-size:.85rem}
+@media (max-width:860px){.menu{display:none}}
 
 /* hero */
-.hero{position:relative;padding-block:72px 88px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 420px at 80% 20%,#C8A96A14,transparent 70%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-.hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);font-weight:600;margin-top:20px}
-.hero h1 span{color:var(--muted);font-weight:300}
-.role{margin-top:20px;font-size:clamp(1.15rem,2vw,1.4rem);color:var(--fg);font-weight:400;max-width:34ch;line-height:1.45}
-.summary{margin-top:18px;color:var(--muted);max-width:56ch}
-.ctas{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
-.stats{margin-top:48px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--line)}
-.stats div{padding:20px 36px 0 0;margin-right:36px;border-right:1px solid var(--line);min-width:0}
-.stats div:last-child{border-right:0;margin-right:0}
-.stats b{display:block;font:500 2rem var(--f-mono);letter-spacing:-.02em}
-.stats span{font-size:.85rem;color:var(--muted)}
-.portrait{display:grid;gap:14px;min-width:0;justify-items:center}
-.frame{position:relative;width:100%;max-width:420px;padding:10px;border:1px solid var(--line-2);border-radius:6px}
-.frame::before,.frame::after{content:"";position:absolute;width:28px;height:28px;border-color:var(--gold);border-style:solid}
-.frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-.frame img{display:block;width:100%;height:auto;border-radius:2px;background:#fff}
-.caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%;max-width:420px;font-size:.85rem;color:var(--muted)}
-.caption .live{display:inline-flex;align-items:center;gap:8px;color:var(--fg)}
-.caption .live i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
-@media (max-width:920px){.hero .wrap{grid-template-columns:1fr;gap:48px}.frame{max-width:360px}}
-@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.stats div{padding-right:16px;margin-right:16px}.stats div:nth-child(2){border-right:0;margin-right:0}.stats div:nth-child(3){grid-column:1/-1;border-top:1px solid var(--line);margin-top:18px}}
+.hero{position:relative;overflow:hidden;padding-block:40px 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
+.hero .copy{padding-bottom:80px}
+.hello{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--gold-soft);color:var(--gold);font:700 .72rem var(--f-sans);letter-spacing:.14em}
+.hero h1{margin-top:22px;font-size:clamp(2.6rem,5.6vw,4.4rem)}
+.hero h1 .gold{display:block}
+.hero .lede{margin-top:22px;max-width:46ch;color:var(--text);font-size:1.05rem}
+.ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.connect{margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.connect span{font:700 .72rem var(--f-sans);letter-spacing:.16em;color:var(--muted)}
+.soc{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);text-decoration:none;transition:border-color .2s,color .2s}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+.figure{position:relative;justify-self:center;width:100%;max-width:500px;aspect-ratio:500/560}
+.figure .circle{position:absolute;left:6%;right:2%;top:6%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#F4E6CC,#E9D3AC)}
+.figure .dots{position:absolute;right:0;top:0;width:90px;height:90px;background-image:radial-gradient(var(--gold-2) 1.6px,transparent 1.6px);background-size:14px 14px}
+.figure img{position:absolute;left:50%;bottom:0;transform:translateX(-46%);width:84%;height:auto;max-width:none;filter:drop-shadow(0 18px 30px #6B4F2033)}
+.badge{position:absolute;left:-2%;top:44%;padding:16px 18px;border-radius:14px;background:var(--white);box-shadow:0 18px 40px -16px #6B4F2040;display:grid;gap:2px;min-width:120px}
+.badge b{font:400 2rem var(--f-serif);color:var(--gold);line-height:1}
+.badge span{font-size:.78rem;color:var(--muted);line-height:1.35}
+.badge i{position:absolute;right:12px;top:12px;width:18px;height:18px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;font-style:normal;font-size:.7rem}
+.badge2{left:auto;right:-2%;top:70%}
+@media (prefers-reduced-motion:no-preference){.badge{animation:float 6s ease-in-out infinite}.badge2{animation-delay:-3s}@keyframes float{50%{transform:translateY(-8px)}}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .copy{padding-bottom:0}.figure{max-width:400px;margin-top:10px}}
+@media (max-width:480px){.badge{left:0}.badge2{right:0}}
 
-/* expertise strip */
-.strip{border-block:1px solid var(--line);background:var(--bg-2)}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.cap{padding:26px 24px;border-left:1px solid var(--line);min-width:0}
-.cap:first-child{border-left:0;padding-left:0}
-.cap .label{color:var(--dim)}
-.cap b{display:block;margin-top:8px;font-weight:500;font-size:1.02rem}
-@media (max-width:860px){.strip .wrap{grid-template-columns:1fr 1fr}.cap{border-left:0;padding-left:0;border-top:1px solid var(--line)}.cap:nth-child(-n+2){border-top:0}}
+section{padding-block:96px}
+.alt{background:var(--white);border-block:1px solid var(--line)}
+.sec-title{display:grid;gap:10px;justify-items:center;margin-bottom:48px}
+.sec-title h2{font-size:clamp(1.9rem,3.6vw,2.6rem)}
 
-/* sections */
-section{padding-block:104px}
-.head{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:end;margin-bottom:56px}
-.head h2{font-size:clamp(2rem,4.2vw,3.2rem)}
-.head p{color:var(--muted);font-size:1.05rem;max-width:56ch}
-.head .t{display:grid;gap:16px}
-@media (max-width:860px){.head{grid-template-columns:1fr;gap:16px}}
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.about-media{position:relative;min-width:0}
+.about-media .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--ink);box-shadow:0 30px 60px -30px #6B4F2066}
+.sig{position:absolute;left:-14px;bottom:-24px;padding:14px 22px;border-radius:12px;background:var(--white);box-shadow:0 18px 40px -16px #6B4F2040;font:400 1.6rem var(--f-serif);font-style:italic;color:var(--gold)}
+.about-text{display:grid;gap:16px;min-width:0}
+.about-text h2{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.stats{margin-top:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{padding:16px 14px;border-radius:12px;border:1px solid var(--line);background:var(--cream);display:grid;gap:4px;min-width:0}
+.stat svg{color:var(--gold)}
+.stat b{font:400 1.7rem var(--f-serif);color:var(--ink);line-height:1.1}
+.stat span{font-size:.78rem;color:var(--muted);line-height:1.35}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:48px}.stats{grid-template-columns:1fr 1fr}}
 
-/* journey */
-.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.j{padding:30px 26px;border-left:1px solid var(--line);background:var(--bg-2);display:grid;gap:10px;align-content:start;min-width:0}
-.j:first-child{border-left:0}
-.j .n{font:500 .78rem var(--f-mono);color:var(--dim)}
-.j h3{font-size:1.2rem;font-weight:500;letter-spacing:-.015em}
-.j p{color:var(--muted);font-size:.93rem}
-.j.now{background:linear-gradient(180deg,#1A1812,var(--bg-2))}
-.j.now .n{color:var(--gold)}
-@media (max-width:920px){.journey{grid-template-columns:1fr 1fr}.j{border-left:0;border-top:1px solid var(--line)}.j:nth-child(-n+2){border-top:0}.j:nth-child(even){border-left:1px solid var(--line)}}
-@media (max-width:560px){.journey{grid-template-columns:1fr}.j:nth-child(even){border-left:0}.j:nth-child(2){border-top:1px solid var(--line)}}
+/* dark mini screen used as about image + project thumbs */
+.mini{background:#14161C;color:#E9EAEE;font-family:var(--f-sans)}
+.mini .mb{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid #262A33}
+.mini .mb i{width:8px;height:8px;border-radius:50%;background:#3A3F4B}
+.mini .mb b{margin-left:8px;font-size:.78rem;font-weight:600}
+.mini .mbody{padding:14px;display:grid;gap:8px}
+.mini .k{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini .k div{padding:10px;border:1px solid #262A33;border-radius:8px}
+.mini .k small{display:block;font-size:.6rem;color:#8A90A0;text-transform:uppercase;letter-spacing:.08em}
+.mini .k strong{font-size:1.3rem;font-weight:600}
+.mini .k .hot{border-color:#B88A3E88;background:#2A2416}
+.mini .r{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;border:1px solid #262A33;border-radius:8px;font-size:.74rem}
+.mini .r em{font-style:normal;color:#8A90A0;font-size:.68rem}
+.mini .r .t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;white-space:nowrap}
+.tag.ok{background:#173326;color:#7CC6A0}.tag.warn{background:#2E2613;color:#E2B862}.tag.bad{background:#331B1A;color:#E99088}.tag.info{background:#1B2233;color:#97A9D2}
 
-/* work */
-.work{display:grid;gap:24px}
-.proj{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:44px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-.proj:nth-child(even) .ptext{order:2}
-.ptext{display:grid;gap:14px;min-width:0}
-.ptext .idx{display:flex;align-items:center;gap:14px}
-.ptext .idx .mono{color:var(--dim);font-size:.8rem}
-.ptext h3{font-size:clamp(1.8rem,3.2vw,2.5rem)}
-.ptext > p{color:var(--muted)}
-.specs{margin-top:8px;display:grid;border-top:1px solid var(--line)}
-.specs div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.94rem}
-.specs dt{font:500 .7rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding-top:4px}
-.specs dd{margin:0}
-@media (max-width:900px){.proj{grid-template-columns:1fr;gap:28px;padding:26px}.proj:nth-child(even) .ptext{order:0}.specs div{grid-template-columns:1fr;gap:2px}}
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc{padding:30px 24px;border-radius:14px;background:var(--white);border:1px solid var(--line);display:grid;gap:12px;justify-items:center;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;min-width:0}
+.svc:hover{transform:translateY(-4px);border-color:var(--gold-2);box-shadow:0 24px 40px -24px #6B4F2040}
+.svc .ic{display:grid;place-items:center;width:58px;height:58px;border-radius:14px;background:var(--gold-soft);color:var(--gold)}
+.svc p{font-size:.88rem;color:var(--muted)}
+@media (max-width:960px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.services{grid-template-columns:1fr}}
 
-/* screen */
-.screen{border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--bg);min-width:0;box-shadow:0 40px 80px -40px #000}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
-.bar b{font-weight:500;font-size:.88rem}
-.bar small{font:400 .68rem var(--f-mono);color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
-.sb{padding:16px;display:grid;gap:9px}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.kpi{padding:12px;border:1px solid var(--line);border-radius:8px;min-width:0}
-.kpi small{display:block;font:500 .64rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-.kpi b{font:500 1.5rem var(--f-mono)}
-.kpi.hot{border-color:#C8A96A66;background:var(--gold-soft)}
-.row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.86rem}
-.row .mono{font-size:.75rem;color:var(--muted)}
-.row .t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.chip{display:inline-block;font:500 .64rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px;white-space:nowrap}
-.chip.ok{background:var(--ok-bg);color:var(--ok)}.chip.warn{background:var(--warn-bg);color:var(--warn)}.chip.bad{background:var(--bad-bg);color:var(--bad)}.chip.info{background:var(--info-bg);color:var(--info)}
-.meter{display:grid;gap:6px;margin-top:4px}
-.meter .lbl{display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted)}
-.track{height:4px;border-radius:4px;background:var(--line);overflow:hidden}
-.fill{height:100%;background:var(--gold)}
+/* expertise */
+.expertise{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.domain{display:grid;gap:18px}
+.dm{display:grid;gap:8px}
+.dm .lbl{display:flex;justify-content:space-between;gap:12px;font-weight:600;color:var(--ink);font-size:.95rem}
+.dm .lbl span{font-weight:500;color:var(--muted);font-size:.82rem}
+.dm .bar{height:5px;border-radius:5px;background:var(--line);overflow:hidden}
+.dm .bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--gold),#D9B676)}
+.tech{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px;border-radius:16px;background:var(--white);border:1px solid var(--line)}
+.tk{display:grid;gap:8px;justify-items:center;text-align:center;padding:14px 6px;border-radius:12px;min-width:0}
+.tk:hover{background:var(--cream)}
+.tk .lg{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;font:700 .8rem var(--f-sans);color:var(--white)}
+.tk small{font-size:.8rem;color:var(--text);font-weight:500}
+@media (max-width:900px){.expertise{grid-template-columns:1fr}}
+@media (max-width:480px){.tech{grid-template-columns:repeat(3,1fr)}}
 
-/* impact table */
-.impact{border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.ir{display:grid;grid-template-columns:.7fr 1fr 1fr;border-top:1px solid var(--line)}
-.ir:first-child{border-top:0}
-.ir > div{padding:20px 24px;min-width:0}
-.ih > div{font:500 .7rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);background:var(--bg-2);padding-block:14px}
-.ih .a{color:var(--gold)}
-.ir .topic{font-weight:500}
-.ir .b{color:var(--dim)}
-.ir .a{background:#C8A96A0A}
-@media (max-width:780px){.ir{grid-template-columns:1fr}.ih{display:none}.ir > div{padding:6px 20px}.ir .topic{padding-top:18px}.ir .a{padding-bottom:18px;background:transparent}
-  .ir .b::before{content:"Before  ";font:500 .66rem var(--f-mono);letter-spacing:.12em;color:var(--dim)}
-  .ir .a::before{content:"After  ";font:500 .66rem var(--f-mono);letter-spacing:.12em;color:var(--gold)}}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pj{border-radius:14px;background:var(--white);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;min-width:0}
+.pj:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px #6B4F2040}
+.pj .thumb{border-bottom:1px solid var(--line)}
+.pj .info{padding:20px 20px 22px;display:grid;gap:8px}
+.pj .meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pj .cat{font-size:.78rem;color:var(--gold);font-weight:600}
+.pj p{font-size:.88rem;color:var(--muted)}
+.pj ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:.86rem}
+.pj li{display:flex;gap:8px}
+.pj li::before{content:"";flex:0 0 6px;height:6px;margin-top:8px;border-radius:50%;background:var(--gold)}
+.head-row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.head-row h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-top:8px}
+.head-row p{color:var(--muted);font-size:.9rem;max-width:40ch}
+@media (max-width:960px){.projects{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.projects{grid-template-columns:1fr}}
 
-/* engagement */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
-.step{padding:26px 22px 0 0;display:grid;gap:8px;align-content:start;min-width:0;position:relative}
-.step::before{content:"";position:absolute;top:-1px;left:0;width:36px;height:2px;background:var(--gold)}
-.step .n{font:500 .74rem var(--f-mono);color:var(--dim)}
-.step h3{font-size:1.1rem;font-weight:500;letter-spacing:-.01em}
-.step p{font-size:.92rem;color:var(--muted)}
-@media (max-width:960px){.steps{grid-template-columns:1fr 1fr;gap:28px 24px}}
-@media (max-width:560px){.steps{grid-template-columns:1fr}}
-.model{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.m{padding:28px;border:1px solid var(--line);border-radius:10px;background:var(--panel);display:grid;gap:10px;align-content:start;min-width:0}
-.m .label{color:var(--dim)}
-.m h3{font-size:1.35rem;font-weight:500}
-.m p{color:var(--muted);font-size:.94rem}
-.m.key{border-color:#C8A96A66}
-.m.key .label{color:var(--gold)}
-@media (max-width:860px){.model{grid-template-columns:1fr}}
-
-/* faq */
-.qs{border-top:1px solid var(--line)}
-details{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:1.1rem;font-weight:500}
-summary::-webkit-details-marker{display:none}
-summary .pm{flex:none;position:relative;width:14px;height:14px}
-summary .pm::before,summary .pm::after{content:"";position:absolute;left:0;top:6px;width:14px;height:1.5px;background:var(--gold);transition:transform .25s}
-summary .pm::after{transform:rotate(90deg)}
-details[open] summary .pm::after{transform:rotate(0)}
-details p{padding:0 0 24px;color:var(--muted);max-width:68ch}
+/* process (in place of testimonials) */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc{padding:26px 22px;border-radius:14px;background:var(--cream);border:1px solid var(--line);display:grid;gap:10px;align-content:start;position:relative;min-width:0}
+.pc .q{font:400 2.6rem var(--f-serif);color:var(--gold-2);line-height:.8}
+.pc p{font-size:.9rem;color:var(--muted)}
+.pc .who{display:flex;align-items:center;gap:12px;margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
+.pc .who i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--white);font:700 .8rem var(--f-sans);font-style:normal}
+.pc .who b{font-size:.9rem;color:var(--ink)}
+.pc .who small{display:block;font-size:.75rem;color:var(--muted)}
+@media (max-width:960px){.process{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.process{grid-template-columns:1fr}}
 
 /* contact */
-.contact{border:1px solid var(--line-2);border-radius:14px;padding:clamp(28px,6vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;
-  background:radial-gradient(600px 300px at 100% 0%,#C8A96A1A,transparent 70%),var(--panel)}
-.contact h2{font-size:clamp(2rem,4.4vw,3.2rem)}
-.contact p{margin-top:16px;color:var(--muted);max-width:46ch}
-.cnum{display:grid;gap:14px;padding:26px;border:1px solid var(--line);border-radius:10px;background:var(--bg);min-width:0}
-.cnum .num{font:500 1.5rem var(--f-mono);user-select:all;word-break:break-word}
-.cnum .acts{display:flex;gap:10px;flex-wrap:wrap}
-.cnum small{color:var(--dim);font-size:.84rem}
-@media (max-width:860px){.contact{grid-template-columns:1fr}}
-footer{padding-block:36px;color:var(--dim);font-size:.85rem;border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.contact h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-top:8px}
+.clist{margin-top:28px;display:grid;gap:14px}
+.ci{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.ci .l{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--gold-soft);color:var(--ink);font-weight:600;font-size:.88rem;min-width:150px}
+.ci .l svg{color:var(--gold)}
+.ci .v{font-size:.95rem;color:var(--text);min-width:0;word-break:break-word}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:26px;border-radius:16px;background:var(--white);border:1px solid var(--line)}
+.form .full{grid-column:1/-1}
+.form label{display:grid;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink)}
+.form input,.form textarea{font:400 .95rem var(--f-sans);color:var(--ink);padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--cream);width:100%}
+.form textarea{min-height:130px;resize:vertical}
+.form .btn{justify-self:start}
+.form small{color:var(--muted);font-size:.8rem}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){.form{grid-template-columns:1fr}.ci{grid-template-columns:1fr;gap:6px}.ci .l{min-width:0;justify-self:start}}
+
+/* footer */
+footer{background:#16140F;color:#CFC8BB;padding-block:64px 26px;margin-top:0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px}
+footer .logo{color:#fff}
+footer p{font-size:.88rem;color:#A39C8F;margin-top:14px;max-width:34ch}
+footer h4{margin:0 0 14px;color:#fff;font:600 .95rem var(--f-sans)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.88rem}
+footer ul a{color:#A39C8F;text-decoration:none}
+footer ul a:hover{color:var(--gold)}
+footer .soc{background:transparent;border-color:#3A362E;color:#E6E0D3;width:36px;height:36px}
+footer .socs{display:flex;gap:10px;margin-top:18px}
+.fbottom{margin-top:48px;padding-top:20px;border-top:1px solid #2E2A23;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.82rem;color:#857E71}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.fgrid{grid-template-columns:1fr}}
+
+/* certification */
+.cert{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.cert-img{position:relative;justify-self:center;width:100%;max-width:360px;padding:14px;border-radius:16px;background:var(--white);border:1px solid var(--line);box-shadow:0 30px 60px -30px #6B4F2055;cursor:zoom-in;transition:transform .25s}
+.cert-img:hover{transform:translateY(-4px) rotate(-.6deg)}
+.cert-img img{display:block;width:100%;height:auto;border-radius:6px}
+.cert-img .zoom{position:absolute;right:22px;bottom:22px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--white);font:600 .75rem var(--f-sans)}
+.cert-info{display:grid;gap:16px;min-width:0}
+.cert-info h2{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.cert-info > p{color:var(--text)}
+.cert-card{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px;border-radius:14px;background:var(--cream);border:1px solid var(--line)}
+.cert-card .seal{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--white)}
+.cert-card h3{font-size:1.15rem}
+.cert-card .org{color:var(--gold);font-weight:600;font-size:.9rem;margin-top:2px}
+.cert-meta{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cert-meta div{min-width:0}
+.cert-meta small{display:block;font:700 .66rem var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cert-meta b{font-size:.9rem;color:var(--ink);font-weight:600;word-break:break-word}
+.learned{display:flex;flex-wrap:wrap;gap:8px}
+.learned span{padding:6px 12px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:.84rem;font-weight:500}
+.lightbox{position:fixed;inset:0;z-index:50;background:#16140FE6;display:grid;place-items:center;padding:24px}
+.lightbox img{max-height:90vh;width:auto;max-width:100%;border-radius:8px;box-shadow:0 30px 80px #000}
+.lightbox button{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border-radius:50%;border:0;background:var(--white);color:var(--ink);font:600 1.4rem var(--f-sans);cursor:pointer}
+@media (max-width:900px){.cert{grid-template-columns:1fr;gap:40px}}
+@media (max-width:480px){.cert-meta{grid-template-columns:1fr 1fr}.cert-card{grid-template-columns:1fr}}
+.copy-mini{margin-left:8px;font:600 .72rem var(--f-sans);padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--gold);cursor:pointer}
 </style>
 </head>
 <body>
 
 
-<header class="top">
+<header class="top" id="topbar">
   <div class="wrap">
-    <a class="logo" href="#top"><i>SH</i>MD Sameer Hashmi</a>
-    <nav class="links" aria-label="Main">
-      <a href="#profile">Profile</a>
-      <a href="#work">Work</a>
-      <a href="#engagement">Engagement</a>
-      <a href="#faq">FAQ</a>
+    <a class="logo" href="#home"><b>SH</b>SAMEER</a>
+    <nav class="menu" aria-label="Main">
+      <a href="#home" class="on">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#certification">Certification</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-gold" href="#contact">Contact</a>
+    <a class="btn btn-ink" href="#contact">Let's Talk
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
   </div>
 </header>
 
-<main id="top">
+<main id="home">
   <!-- HERO -->
   <div class="hero">
     <div class="wrap">
-      <div>
-        <p class="label">Business Software Developer</p>
-        <h1>MD Sameer <span>Hashmi</span></h1>
-        <p class="role">I design and build record-keeping software for manufacturers and exporters.</p>
-        <p class="summary">Purchase tracking, employee documentation and compliance renewals, built around how your teams already work and installed on your own server, so your data never leaves your premises.</p>
+      <div class="copy">
+        <span class="hello">HELLO, I'M SAMEER</span>
+        <h1>I Understand Factories.<span class="gold">I Build Their Software.</span></h1>
+        <p class="lede">Business software developer building record-keeping systems for manufacturers and exporters: purchase tracking, employee documents and compliance renewals, installed on your own server.</p>
         <div class="ctas">
-          <a class="btn btn-gold" href="https://wa.me/917667825452" target="_blank" rel="noopener">Discuss a project</a>
-          <a class="btn btn-line" href="#work">View selected work</a>
+          <a class="btn btn-ink" href="#projects">View My Work</a>
+          <a class="btn btn-gold-line" href="https://wa.me/917667825452" target="_blank" rel="noopener">WhatsApp Me
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
         </div>
+        <div class="connect">
+          <span>LET'S CONNECT</span>
+          <a class="soc" href="https://github.com/hashmisameer" target="_blank" rel="noopener" aria-label="GitHub"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a class="soc" href="https://wa.me/917667825452" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.2-4.1a8.5 8.5 0 1 1 15.8-4.4Z"/></svg></a>
+          <a class="soc" href="mailto:hashmisameer99.9@gmail.com" aria-label="Email hashmisameer99.9@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="dots" aria-hidden="true"></div>
+        <div class="circle" aria-hidden="true"></div>
+        <img src="sameer-cut.webp" alt="MD Sameer Hashmi" width="640" height="851">
+        <div class="badge"><i aria-hidden="true">✦</i><b>3</b><span>Systems in<br>daily use</span></div>
+        <div class="badge badge2"><i aria-hidden="true">✦</i><b>550+</b><span>Employee records<br>managed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <div class="about-media">
+        <div class="shot mini" aria-label="PayGate management view, sample data">
+          <div class="mb"><i></i><i></i><i></i><b>PayGate · Management view</b></div>
+          <div class="mbody">
+            <div class="k"><div><small>Merchandiser</small><strong>4</strong></div><div class="hot"><small>Accounts</small><strong>7</strong></div><div><small>Material</small><strong>5</strong></div></div>
+            <div class="r"><em>PI-24-118</em><span class="t">Cotton yarn, 40s combed</span><span class="tag ok">Cleared</span></div>
+            <div class="r"><em>PI-24-121</em><span class="t">Trims and labels</span><span class="tag info">In transit</span></div>
+            <div class="r"><em>PI-24-109</em><span class="t">Dyed fabric, 2 lots</span><span class="tag bad">32 days</span></div>
+            <div class="r"><em>PI-24-125</em><span class="t">Packing cartons</span><span class="tag warn">Payment due</span></div>
+          </div>
+        </div>
+        <div class="sig">Sameer</div>
+      </div>
+      <div class="about-text">
+        <span class="kicker">About me</span>
+        <h2>Building practical software for the way factories really work.</h2>
+        <p>My background is in ERP and procurement operations at a manufacturing company. I saw how much important work still lived in registers, Excel sheets and phone calls, so I started building systems to fix it.</p>
+        <p>Today three systems I built run every day at ASPS International LLP, where I build the company's internal software. I now build the same kind of software for other manufacturers and exporters.</p>
         <div class="stats">
-          <div><b>3</b><span>Systems in production</span></div>
-          <div><b>~550</b><span>Employee records managed</span></div>
-          <div><b>~50</b><span>Compliance items tracked</span></div>
+          <div class="stat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg><b>3</b><span>Systems in production</span></div>
+          <div class="stat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg><b>550+</b><span>Employee records</span></div>
+          <div class="stat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/></svg><b>~50</b><span>Compliance items tracked</span></div>
+          <div class="stat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><b>100%</b><span>Data on your own server</span></div>
+        </div>
+        <div><a class="btn btn-gold-line" href="#projects">See My Work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-title"><span class="kicker">Services</span><h2>What I Can Help You With</h2></div>
+      <div class="services">
+        <div class="svc"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><h3>Purchase Tracking</h3><p>PI to payment to material receipt, across every desk, with alerts for delays.</p></div>
+        <div class="svc"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h4"/></svg></span><h3>Employee Documents</h3><p>A checklist per employee, deadlines from joining date, automatic stamping.</p></div>
+        <div class="svc"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></span><h3>Compliance &amp; Renewals</h3><p>Licences, trainings and reports with reminders before every due date.</p></div>
+        <div class="svc"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Owner Dashboards</h3><p>One view-only screen where management sees status without asking anyone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="alt">
+    <div class="wrap">
+      <div class="sec-title"><span class="kicker">Expertise &amp; Tools</span><h2>What I Work With</h2></div>
+      <div class="expertise">
+        <div class="domain">
+          <div class="dm"><div class="lbl">Procurement &amp; purchase flows<span>PI, payment, receipt</span></div><div class="bar"><i></i></div></div>
+          <div class="dm"><div class="lbl">ERP operations<span>Manufacturing</span></div><div class="bar"><i></i></div></div>
+          <div class="dm"><div class="lbl">HR documentation<span>PF, ESIC, onboarding</span></div><div class="bar"><i></i></div></div>
+          <div class="dm"><div class="lbl">Compliance records<span>Licences, audits</span></div><div class="bar"><i></i></div></div>
+          <div class="dm"><div class="lbl">Server deployment<span>On-premise, remote setup</span></div><div class="bar"><i></i></div></div>
+        </div>
+        <div class="tech">
+          <div class="tk"><span class="lg" style="background:#3A7FB8">Re</span><small>React</small></div>
+          <div class="tk"><span class="lg" style="background:#4C8C3F">No</span><small>Node.js</small></div>
+          <div class="tk"><span class="lg" style="background:#3B3B3B">Ex</span><small>Express</small></div>
+          <div class="tk"><span class="lg" style="background:#B5342D">SQL</span><small>SQL Server</small></div>
+          <div class="tk"><span class="lg" style="background:#7A4FC2">Vi</span><small>Vite</small></div>
+          <div class="tk"><span class="lg" style="background:#1F7A45">XL</span><small>Excel automation</small></div>
+          <div class="tk"><span class="lg" style="background:#2D6CB0">Win</span><small>Windows Server</small></div>
+          <div class="tk"><span class="lg" style="background:#24292F">Git</span><small>GitHub</small></div>
         </div>
       </div>
-      <div class="portrait">
-        <div class="frame"><img src="sameer.jpg" alt="MD Sameer Hashmi" width="900" height="1198"></div>
-        <div class="caption">
-          <span class="live"><i aria-hidden="true"></i>Available for new projects</span>
-          <span>Remote engagements across India</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="head-row">
+        <div><span class="kicker">Featured Projects</span><h2>A Selection of My Recent Work</h2></div>
+        <p>Built in-house at ASPS International LLP. All screens use sample data.</p>
+      </div>
+      <div class="projects">
+        <article class="pj">
+          <div class="thumb mini">
+            <div class="mb"><i></i><i></i><i></i><b>Lot timeline</b></div>
+            <div class="mbody">
+              <div class="r"><em>Lot 1</em><span class="t">1,200 m received</span><span class="tag ok">Cleared</span></div>
+              <div class="r"><em>Lot 2</em><span class="t">800 m dispatched</span><span class="tag info">In transit</span></div>
+              <div class="r"><span class="tag bad">Alert</span><span class="t">Paid 32 days ago</span><em>Accounts</em></div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="meta"><h3>PayGate</h3><span class="cat">Purchase records</span></div>
+            <p>Every purchase from proforma invoice to material receipt, across three desks.</p>
+            <ul><li>Reads PIs automatically, 14/14 correct in testing</li><li>Lot tracking and 30-day pending alerts</li></ul>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="thumb mini">
+            <div class="mb"><i></i><i></i><i></i><b>Employee E-10482</b></div>
+            <div class="mbody">
+              <div class="r"><em>PAN</em><span class="t">Uploaded day 2</span><span class="tag ok">Done</span></div>
+              <div class="r"><em>ESIC</em><span class="t">Due in 4 days</span><span class="tag warn">Pending</span></div>
+              <div class="r"><em>Bio-data</em><span class="t">6 days late</span><span class="tag bad">Overdue</span></div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="meta"><h3>Document System</h3><span class="cat">HR documents</span></div>
+            <p>Every employee's mandatory documents in one checklist with deadlines.</p>
+            <ul><li>550+ employees, 20 to 30 joiners on busy days</li><li>Auto-stamping and daily overdue report</li></ul>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="thumb mini">
+            <div class="mb"><i></i><i></i><i></i><b>Renewals · next 30 days</b></div>
+            <div class="mbody">
+              <div class="r"><span class="tag info">Licence</span><span class="t">Factory licence</span><em>28 d</em></div>
+              <div class="r"><span class="tag info">Training</span><span class="t">First-aid training</span><em>9 d</em></div>
+              <div class="r"><span class="tag bad">Expired</span><span class="t">Consent to operate</span><em>-3 d</em></div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="meta"><h3>Compliance Tracker</h3><span class="cat">Renewals</span></div>
+            <p>Around 50 licences, trainings and reports with a full renewal history.</p>
+            <ul><li>Reminders at 30, 20 and 10 days</li><li>Daily warnings until expired items are renewed</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION -->
+  <section id="certification" class="alt">
+    <div class="wrap cert">
+      <button class="cert-img" type="button" id="certOpen" aria-label="View certificate full size">
+        <img src="sap-certificate.jpg" alt="Certificate of Achievement, SAP S/4HANA on MM training, Croma Campus" width="900" height="1272" loading="lazy">
+        <span class="zoom">View full</span>
+      </button>
+      <div class="cert-info">
+        <span class="kicker">Certification</span>
+        <h2>SAP S/4HANA Materials Management</h2>
+        <p>Formal training in SAP MM, the procurement and inventory module used by large manufacturers. It covers the same purchase-to-receipt flow my software handles every day.</p>
+        <div class="cert-card">
+          <span class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 8 5-3 5 3-1.5-8"/></svg></span>
+          <div>
+            <h3>Certificate of Achievement: SAP S/4 HANA on MM</h3>
+            <p class="org">Croma Campus</p>
+            <div class="cert-meta">
+              <div><small>Training</small><b>30 Apr – 15 Jul 2026</b></div>
+              <div><small>Issued</small><b>04 Aug 2026</b></div>
+              <div><small>Certificate ID</small><b>CCN-63198007</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="learned">
+          <span>Procure to pay</span><span>Purchase orders</span><span>Goods receipt</span><span>Invoice verification</span><span>Inventory management</span>
         </div>
       </div>
     </div>
+  </section>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Certificate">
+    <button type="button" id="certClose" aria-label="Close">×</button>
+    <img src="sap-certificate.jpg" alt="SAP S/4HANA on MM certificate, Croma Campus" width="900" height="1272">
   </div>
 
-  <div class="strip">
+  <!-- PROCESS -->
+  <section id="process" class="alt">
     <div class="wrap">
-      <div class="cap"><span class="label">Domain</span><b>Manufacturing and export</b></div>
-      <div class="cap"><span class="label">Focus</span><b>Purchase, HR and compliance records</b></div>
-      <div class="cap"><span class="label">Delivery</span><b>Web app, database and server setup</b></div>
-      <div class="cap"><span class="label">Background</span><b>ERP and procurement</b></div>
-    </div>
-  </div>
-
-  <!-- PROFILE / JOURNEY -->
-  <section id="profile">
-    <div class="wrap">
-      <div class="head">
-        <div class="t"><p class="label">Profile</p><h2>Built from inside the factory office</h2></div>
-        <p>My background is in ERP and procurement operations, not a software agency. I build systems for the processes I have worked in, which is why they fit how factory teams actually work.</p>
-      </div>
-      <div class="journey">
-        <div class="j"><span class="n">01 · Foundation</span><h3>ERP and procurement operations</h3><p>Day-to-day work with purchase orders, proforma invoices, payments and stores at a manufacturer.</p></div>
-        <div class="j"><span class="n">02 · The gap</span><h3>Critical records outside any system</h3><p>Production lived in the ERP and accounts in Tally. Everything between them ran on registers and spreadsheets.</p></div>
-        <div class="j"><span class="n">03 · Delivery</span><h3>Three systems in production</h3><p>Employee documents, compliance renewals and purchase tracking, now in daily use at ASPS International LLP.</p></div>
-        <div class="j now"><span class="n">04 · Today</span><h3>Building for other manufacturers</h3><p>Taking on new engagements with manufacturers and exporters facing the same gaps.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <div class="t"><p class="label">Selected work</p><h2>In production at ASPS International LLP</h2></div>
-        <p>Each system was designed with the teams who use it and runs on the company's own server. All screens shown here use sample data.</p>
-      </div>
-      <div class="work">
-        <article class="proj">
-          <div class="ptext">
-            <div class="idx"><span class="label">Purchase records</span><span class="mono">01 / 03</span></div>
-            <h3>PayGate</h3>
-            <p>End-to-end tracking of every purchase, from proforma invoice to material receipt, across the Merchandiser, Accounts and Material desks.</p>
-            <dl class="specs">
-              <div><dt>Automation</dt><dd>Reads PI numbers and amounts from the document. 14 of 14 read correctly in testing.</dd></div>
-              <div><dt>Tracking</dt><dd>Every material lot moves from In transit to Cleared.</dd></div>
-              <div><dt>Controls</dt><dd>Alert when material is pending 30 days after payment. Vendor credits carried to the next PI.</dd></div>
-            </dl>
-          </div>
-          <div class="screen">
-            <div class="bar"><b>PayGate · Management view</b><small>Sample data</small></div>
-            <div class="sb">
-              <div class="kpis">
-                <div class="kpi"><small>Merchandiser</small><b>4</b></div>
-                <div class="kpi hot"><small>Accounts</small><b>7</b></div>
-                <div class="kpi"><small>Material</small><b>5</b></div>
-              </div>
-              <div class="row"><span class="mono">PI-24-118</span><span class="t">Cotton yarn, 40s combed</span><span class="chip ok">Cleared</span></div>
-              <div class="row"><span class="mono">PI-24-121</span><span class="t">Trims and labels</span><span class="chip info">In transit</span></div>
-              <div class="row"><span class="mono">PI-24-109</span><span class="t">Dyed fabric, 2 lots</span><span class="chip bad">32 days</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj">
-          <div class="ptext">
-            <div class="idx"><span class="label">Employee documentation</span><span class="mono">02 / 03</span></div>
-            <h3>Document Management System</h3>
-            <p>A complete document checklist for every employee, with deadlines counted from the joining date and overdue items flagged automatically.</p>
-            <dl class="specs">
-              <div><dt>Scale</dt><dd>Around 550 employees, with 20 to 30 new joiners on peak days.</dd></div>
-              <div><dt>Automation</dt><dd>Company stamp applied to forms automatically on upload.</dd></div>
-              <div><dt>Reporting</dt><dd>Excel import and export, and a daily overdue report to the office.</dd></div>
-            </dl>
-          </div>
-          <div class="screen">
-            <div class="bar"><b>Employee E-10482</b><small>Sample data</small></div>
-            <div class="sb">
-              <div class="row"><span class="mono">PAN</span><span class="t">Uploaded on day 2</span><span class="chip ok">Complete</span></div>
-              <div class="row"><span class="mono">PF Form</span><span class="t">Stamped on upload</span><span class="chip ok">Complete</span></div>
-              <div class="row"><span class="mono">ESIC</span><span class="t">Due in 4 days</span><span class="chip warn">Pending</span></div>
-              <div class="row"><span class="mono">Bio-data</span><span class="t">6 days past deadline</span><span class="chip bad">Overdue</span></div>
-              <div class="meter"><div class="lbl"><span>Checklist completion</span><span class="mono">7 / 9</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj">
-          <div class="ptext">
-            <div class="idx"><span class="label">Compliance</span><span class="mono">03 / 03</span></div>
-            <h3>Compliance Tracker</h3>
-            <p>A single register for around 50 committees, trainings, agreements, testing reports and licences, each with a full renewal history.</p>
-            <dl class="specs">
-              <div><dt>Reminders</dt><dd>One consolidated daily email for items due in 30, 20 and 10 days.</dd></div>
-              <div><dt>Escalation</dt><dd>Daily warning for expired items until they are renewed.</dd></div>
-              <div><dt>Audit trail</dt><dd>Previous copies are never overwritten, with issue dates preserved.</dd></div>
-            </dl>
-          </div>
-          <div class="screen">
-            <div class="bar"><b>Renewals · Next 30 days</b><small>Sample data</small></div>
-            <div class="sb">
-              <div class="row"><span class="chip info">Licence</span><span class="t">Factory licence</span><span class="mono">28 days</span></div>
-              <div class="row"><span class="chip info">Testing</span><span class="t">Fire extinguisher refill report</span><span class="mono">19 days</span></div>
-              <div class="row"><span class="chip info">Training</span><span class="t">First-aid training</span><span class="mono">9 days</span></div>
-              <div class="row"><span class="chip bad">Expired</span><span class="t">Consent to operate</span><span class="mono">3 days ago</span></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <div class="t"><p class="label">Impact</p><h2>What changes for the business</h2></div>
-        <p>The software replaces follow-ups and manual searching with records that are always current and visible to management.</p>
-      </div>
-      <div class="impact" role="table" aria-label="Before and after">
-        <div class="ir ih" role="row"><div role="columnheader">Area</div><div role="columnheader">Before</div><div role="columnheader" class="a">After</div></div>
-        <div class="ir" role="row"><div class="topic" role="cell">Purchase status</div><div class="b" role="cell">Calls across accounts, stores and vendors</div><div class="a" role="cell">Each PI's desk and lot status on one screen</div></div>
-        <div class="ir" role="row"><div class="topic" role="cell">Licence renewals</div><div class="b" role="cell">Dates in files, often noticed after expiry</div><div class="a" role="cell">Reminders at 30, 20 and 10 days</div></div>
-        <div class="ir" role="row"><div class="topic" role="cell">Employee files</div><div class="b" role="cell">Gaps discovered during inspections</div><div class="a" role="cell">Per-employee checklist with daily overdue report</div></div>
-        <div class="ir" role="row"><div class="topic" role="cell">Management visibility</div><div class="b" role="cell">Dependent on staff for updates</div><div class="a" role="cell">View-only access to live records</div></div>
-        <div class="ir" role="row"><div class="topic" role="cell">Audit readiness</div><div class="b" role="cell">Physical search for past copies</div><div class="a" role="cell">Complete history retained with dates</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENGAGEMENT -->
-  <section id="engagement" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <div class="t"><p class="label">Engagement</p><h2>A structured, low-risk process</h2></div>
-        <p>Delivery can be fully remote. Installation runs through screen-sharing sessions that your team approves and observes.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="n">Phase 1</span><h3>Discovery</h3><p>Map how records move through your teams today.</p></div>
-        <div class="step"><span class="n">Phase 2</span><h3>Development</h3><p>Working screens shared early for review and correction.</p></div>
-        <div class="step"><span class="n">Phase 3</span><h3>Deployment</h3><p>Installation on your server, on site or remote.</p></div>
-        <div class="step"><span class="n">Phase 4</span><h3>Training</h3><p>Recorded sessions for each team.</p></div>
-        <div class="step"><span class="n">Phase 5</span><h3>Support</h3><p>Fixes, backups and minor changes each quarter.</p></div>
-      </div>
-      <div class="model">
-        <div class="m"><span class="label">One-time</span><h3>Build</h3><p>Fixed quote per system, agreed before work begins.</p></div>
-        <div class="m"><span class="label">One-time</span><h3>Setup</h3><p>Server installation, data import and team training.</p></div>
-        <div class="m key"><span class="label">Quarterly</span><h3>Maintenance</h3><p>One plan covering all your systems. New features quoted separately.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <div class="t"><p class="label">FAQ</p><h2>Common questions</h2></div>
-        <p>For anything not covered here, send your question on WhatsApp.</p>
-      </div>
-      <div class="qs">
-        <details open><summary>Where is our data stored?<span class="pm" aria-hidden="true"></span></summary><p>On your own server, inside your premises. Nothing is stored on an external cloud unless you request it, and every user receives only the access their role requires.</p></details>
-        <details><summary>Do we need to replace Tally or our ERP?<span class="pm" aria-hidden="true"></span></summary><p>No. These systems cover the processes your existing software does not, such as purchase follow-ups, documentation and renewals. Your current software continues as it is.</p></details>
-        <details><summary>Can installation be done remotely?<span class="pm" aria-hidden="true"></span></summary><p>Yes. Installation and training are carried out through screen-sharing sessions that your team approves and observes.</p></details>
-        <details><summary>How is pricing structured?<span class="pm" aria-hidden="true"></span></summary><p>A fixed build price per system, a one-time setup fee, and a quarterly maintenance plan covering all your systems. Any new feature is quoted and approved before work begins.</p></details>
-        <details><summary>How is support handled after go-live?<span class="pm" aria-hidden="true"></span></summary><p>Bug fixes, backups and minor changes are covered by the maintenance plan, with direct access by phone and WhatsApp.</p></details>
+      <div class="sec-title"><span class="kicker">How I Work</span><h2>From Your Paperwork to Working Software</h2></div>
+      <div class="process">
+        <div class="pc"><span class="q">01</span><h3>Discovery</h3><p>I sit with your teams and map how records move through the office today.</p><div class="who"><i>1</i><div><b>First step</b><small>Understand the process</small></div></div></div>
+        <div class="pc"><span class="q">02</span><h3>Development</h3><p>You see working screens early and correct them before anything is final.</p><div class="who"><i>2</i><div><b>Review often</b><small>No surprises at the end</small></div></div></div>
+        <div class="pc"><span class="q">03</span><h3>Deployment</h3><p>Installed on your own server, on site or remotely in a session you approve.</p><div class="who"><i>3</i><div><b>Your server</b><small>Your data stays with you</small></div></div></div>
+        <div class="pc"><span class="q">04</span><h3>Support</h3><p>Training for every team, then fixes, backups and small changes each quarter.</p><div class="who"><i>4</i><div><b>Quarterly plan</b><small>New features quoted first</small></div></div></div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" style="padding-top:0">
-    <div class="wrap">
-      <div class="contact">
-        <div>
-          <p class="label">Contact</p>
-          <h2 style="margin-top:14px">Let's discuss what your teams are tracking by hand.</h2>
-          <p>Share a short description of the process. I will respond with a proposed approach and a demonstration using sample data.</p>
-        </div>
-        <div class="cnum">
-          <span class="label" style="color:var(--dim)">Phone and WhatsApp</span>
-          <span class="num" id="num">+91 76678 25452</span>
-          <div class="acts">
-            <a class="btn btn-gold" href="https://wa.me/917667825452" target="_blank" rel="noopener">Open WhatsApp</a>
-            <button class="btn btn-line" id="copy" type="button">Copy number</button>
-          </div>
-          <small id="copied" aria-live="polite">Monday to Saturday</small>
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <span class="kicker">Get in Touch</span>
+        <h2>Let's Build Something Useful for Your Factory</h2>
+        <div class="clist">
+          <div class="ci"><span class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</span><span class="v"><span id="mail">hashmisameer99.9@gmail.com</span><button class="copy-mini" type="button" id="copyMail">Copy</button></span></div>
+          <div class="ci"><span class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>Phone</span><span class="v">+91 76678 25452</span></div>
+          <div class="ci"><span class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.2-4.1a8.5 8.5 0 1 1 15.8-4.4Z"/></svg>WhatsApp</span><span class="v"><a href="https://wa.me/917667825452" target="_blank" rel="noopener">Message me directly</a></span></div>
+          <div class="ci"><span class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Location</span><span class="v">India, working remotely</span></div>
+          <div class="ci"><span class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Availability</span><span class="v">Open for new projects</span></div>
         </div>
       </div>
+      <form class="form" id="cform" novalidate>
+        <label>Your Name<input id="f-name" name="name" type="text" placeholder="Your name" required></label>
+        <label>Company<input id="f-company" name="company" type="text" placeholder="Company name"></label>
+        <label class="full">What should the software handle?<input id="f-subject" name="subject" type="text" placeholder="e.g. Purchase tracking"></label>
+        <label class="full">Message<textarea id="f-msg" name="message" placeholder="Tell me a little about the problem" required></textarea></label>
+        <button class="btn btn-gold full" type="submit">Send on WhatsApp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></button>
+        <small class="full" id="fnote" aria-live="polite">Your message opens in WhatsApp, ready to send.</small>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 MD Sameer Hashmi</span>
-    <span>All product screens use sample data.</span>
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#home"><b>SH</b>SAMEER</a>
+        <p>Business software developer building record-keeping systems for manufacturers and exporters.</p>
+        <div class="socs">
+          <a class="soc" href="mailto:hashmisameer99.9@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+          <a class="soc" href="https://github.com/hashmisameer" target="_blank" rel="noopener" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a class="soc" href="https://wa.me/917667825452" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3.5 20l1.2-4.1a8.5 8.5 0 1 1 15.8-4.4Z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Purchase tracking</a></li><li><a href="#services">Employee documents</a></li><li><a href="#services">Compliance &amp; renewals</a></li><li><a href="#services">Owner dashboards</a></li></ul></div>
+      <div><h4>Let's Talk</h4><p style="margin-top:0">Have a process your team still tracks by hand? I'd like to hear about it.</p><p style="margin-top:10px;color:#CFC8BB">hashmisameer99.9@gmail.com<br>+91 76678 25452</p><a class="btn btn-gold" style="margin-top:16px" href="https://wa.me/917667825452" target="_blank" rel="noopener">Start a Project</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 MD Sameer Hashmi. All rights reserved.</span><span>All product screens use sample data.</span></div>
   </div>
 </footer>
 
 <script>
-document.getElementById('copy').addEventListener('click',function(){
-  var note=document.getElementById('copied');
-  function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Number selected. Copy it with your keyboard or long-press.';}
-  try{navigator.clipboard.writeText('+917667825452').then(function(){note.textContent='Number copied.';},fallback);}catch(e){fallback();}
-});
+(function(){
+  var form=document.getElementById('cform'),note=document.getElementById('fnote');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('f-name').value.trim(),c=document.getElementById('f-company').value.trim(),
+        s=document.getElementById('f-subject').value.trim(),m=document.getElementById('f-msg').value.trim();
+    if(!n||!m){note.textContent='Please add your name and a short message.';return;}
+    var text='Hello Sameer,\n\nName: '+n+(c?'\nCompany: '+c:'')+(s?'\nNeed: '+s:'')+'\n\n'+m;
+    var url='https://wa.me/917667825452?text='+encodeURIComponent(text);
+    var w=null;try{w=window.open(url,'_blank','noopener');}catch(err){}
+    if(!w){try{window.location.href=url;}catch(err){}}
+    note.innerHTML='If WhatsApp did not open, <a href="'+url+'" target="_blank" rel="noopener">tap here to continue</a>.';
+  });
+  var links=[].slice.call(document.querySelectorAll('.menu a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY+120,idx=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});
+    links.forEach(function(a,i){a.classList.toggle('on',i===idx);});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var lb=document.getElementById('lightbox');
+  document.getElementById('certOpen').addEventListener('click',function(){lb.hidden=false;document.getElementById('certClose').focus();});
+  function closeLb(){lb.hidden=true;document.getElementById('certOpen').focus();}
+  document.getElementById('certClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb();});
+  document.getElementById('copyMail').addEventListener('click',function(){
+    var b=this;function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected';}
+    try{navigator.clipboard.writeText('hashmisameer99.9@gmail.com').then(function(){b.textContent='Copied';},sel);}catch(err){sel();}
+  });
+})();
 </script>
 
 </body>
